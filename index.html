@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,7 +52,6 @@
             margin-bottom: 25px;
         }
 
-        /* Correção do Logótipo (Sem cortes) */
         .logo-topo {
             width: 170px;
             height: auto;
@@ -128,7 +127,7 @@
             background: #20ba5a;
         }
 
-        /* --- PLATAFORMAS DE DELIVERY (Corrigido) --- */
+        /* --- PLATAFORMAS DE DELIVERY --- */
         .plataformas-sec {
             padding: 70px 20px;
             background: #ffffff;
@@ -248,7 +247,31 @@
             border: none;
         }
 
-        /* --- GOOGLE REVIEWS (Corrigido para Mobile) --- */
+        /* Botão para abrir em tela cheia */
+        .btn-tela-cheia {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--roxo-principal);
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(61, 12, 66, 0.2);
+        }
+
+        .btn-tela-cheia:hover {
+            background: var(--roxo-vibrante);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(61, 12, 66, 0.3);
+        }
+
+        /* --- GOOGLE REVIEWS --- */
         .reviews-sec {
             padding: 80px 20px;
             background: #ffffff;
@@ -363,7 +386,7 @@
         }
         .card-vinho img:hover { transform: scale(1.04); }
 
-        /* --- VÍDEO VERTICAL NATIVO (Sem Iframe do Drive) --- */
+        /* --- VÍDEO VERTICAL NATIVO --- */
         .video-sec {
             padding: 80px 20px;
             background: #ffffff;
@@ -503,12 +526,11 @@
         .wsp-float:hover { transform: scale(1.12); }
         .wsp-float svg { width: 38px; height: 38px; fill: #ffffff; }
 
-        /* Responsividade para ecrãs mais pequenos */
+        /* Responsividade para telas menores */
         @media (max-width: 850px) {
             .grid-loc { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.1rem; }
             
-            /* Ajustes do Título de Avaliações em ecrãs pequenos */
             .google-badge-header { font-size: 0.85rem; padding: 10px 15px; }
             
             .card-app { height: 75px; }
@@ -516,6 +538,7 @@
             .card-ifood:hover { transform: scale(1.08) translateY(-2px); }
             
             .iframe-wrapper { height: 600px; }
+            .btn-tela-cheia { width: 100%; }
         }
     </style>
 </head>
@@ -526,7 +549,7 @@
         <div class="logo-wrapper">
             <img src="https://i.ibb.co/rKRytQVy/LOGO-VIP.jpg" alt="Logo VIP Pizzaria" class="logo-topo">
         </div>
-        <h1>A Melhor Pizza da Região na tua Mesa</h1>
+        <h1>A Melhor Pizza da Região na sua Mesa</h1>
         <p>Assada no tradicional Forno a Lenha. Mais de 35 anos de história e qualidade inconfundível na Freguesia do Ó.</p>
         
         <div class="botoes-hero">
@@ -564,8 +587,8 @@
 
     <!-- MOCKUP CARDÁPIO DIGITAL (WHATSMENU EMBED) -->
     <section id="fazer-pedido" class="cardapio-sec">
-        <h2 class="section-title">Faz o teu Pedido Direto</h2>
-        <p class="section-subtitle">Acede ao nosso cardápio oficial sem taxas intermediárias</p>
+        <h2 class="section-title">Faça seu Pedido Direto</h2>
+        <p class="section-subtitle">Acesse nosso cardápio oficial sem taxas intermediárias</p>
 
         <div class="browser-mockup">
             <div class="browser-header">
@@ -580,6 +603,11 @@
                 <iframe src="https://whatsmenu.com.br/vippizzaria" title="Cardápio Digital VIP Pizzaria"></iframe>
             </div>
         </div>
+        
+        <!-- Botão adicionado para abrir o WhatsMenu em nova aba -->
+        <a href="https://whatsmenu.com.br/vippizzaria" target="_blank" class="btn-tela-cheia">
+            🍕 Finalizar Pedido em Tela Cheia
+        </a>
     </section>
 
     <!-- GOOGLE REVIEWS (DEPOIMENTOS DE GERAÇÕES) -->
@@ -589,7 +617,7 @@
             <span style="color: #ccc;">•</span>
             <span>Tradição Reconhecida</span>
         </div>
-        <h2 class="section-title">O que os Nossos Clientes Dizem</h2>
+        <h2 class="section-title">O que Nossos Clientes Dizem</h2>
         <p class="section-subtitle">Histórias reais de quem acompanha a VIP Pizzaria há décadas</p>
 
         <div class="carrossel-reviews">
@@ -624,13 +652,13 @@
 
     <!-- GALERIA DE FOTOS E ADEGA DE VINHOS -->
     <section class="galeria-sec">
-        <h2 class="section-title">A Nossa Cozinha em Detalhes</h2>
+        <h2 class="section-title">Nossa Cozinha em Detalhes</h2>
         <p class="section-subtitle">Ingredientes selecionados e massa de longa fermentação</p>
 
         <div class="grid-pizzas">
             <div class="card-pizza">
                 <img src="https://i.ibb.co/SDbN7ZRq/image.png" alt="Pizza Especial VIP">
-                <p>As Nossas Pizzas Especiais</p>
+                <p>Nossas Pizzas Especiais</p>
             </div>
             <div class="card-pizza">
                 <img src="https://i.ibb.co/1YMjJRNv/image.png" alt="Sabor Inconfundível">
@@ -645,7 +673,7 @@
         <!-- Adega de Vinhos VIP -->
         <div class="adega-box">
             <h3>🍷 Adega Exclusiva VIP</h3>
-            <p>Harmoniza a tua pizza com a nossa seleção especial de Vinhos da Casa</p>
+            <p>Harmonize sua pizza com a nossa seleção especial de Vinhos da Casa</p>
             <div class="grid-vinhos">
                 <div class="card-vinho">
                     <img src="https://i.ibb.co/yn2nn4zN/image.png" alt="Vinho VIP 1">
@@ -663,13 +691,13 @@
     <!-- BASTIDORES & VÍDEO VERTICAL NATIVO -->
     <section class="video-sec">
         <h2 class="section-title">Bastidores do Nosso Forno</h2>
-        <p class="section-subtitle">Sente o clima da nossa preparação diária</p>
+        <p class="section-subtitle">Sinta o clima da nossa preparação diária</p>
 
         <div class="video-card-vertical">
-            <!-- Player HTML5 nativo e limpo, substitui o iframe problemático do Google Drive -->
-            <video controls playsinline preload="metadata">
-                <source src="https://drive.google.com/uc?export=download&id=1hLKDp_kDAUd3-J2y6MT9-APh6ieSdIoG" type="video/mp4">
-                O teu navegador não suporta a tag de vídeo.
+            <!-- Para rodar perfeitamente na Vercel, basta colocar o arquivo video.mp4 na mesma pasta deste arquivo index.html no GitHub -->
+            <video controls playsinline preload="metadata" poster="https://i.ibb.co/RpHHHNts/CAPA-VIP.jpg">
+                <source src="video.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
             </video>
         </div>
     </section>
@@ -689,7 +717,7 @@
                     <p>Terça a Quinta e Domingo: 18h às 23h<br>Sexta e Sábado: 18h às 23h30</p>
                 </div>
                 <div class="info-item">
-                    <h4>📞 Contacto</h4>
+                    <h4>📞 Contato</h4>
                     <p>(11) 3931-6085</p>
                 </div>
                 <a href="https://maps.google.com/?q=Rua+Antônio+de+Couros,+463+-+Freguesia+do+Ó,+São+Paulo+-+SP" target="_blank" class="btn-mapa">
@@ -706,7 +734,7 @@
         <div class="social-links">
             <!-- Link do Instagram atualizado -->
             <a href="https://www.instagram.com/vippizzariaartesanal/" target="_blank" class="social-btn">
-                📸 Segue-nos no Instagram @vippizzariaartesanal
+                📸 Siga no Instagram @vippizzariaartesanal
             </a>
         </div>
         <p>VIP Pizzaria &copy; 1991 - 2026. Todos os direitos reservados.</p>
