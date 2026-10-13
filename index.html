@@ -6,13 +6,13 @@
     <title>VIP Pizzaria | Tradição desde 1991</title>
     <style>
         :root {
-            /* Paleta de Cores VIP Pizzaria */
             --roxo-vip: #5a1864; 
             --roxo-claro: #8e2b9c;
             --dourado: #f5b041;
             --texto-escuro: #333333;
             --texto-claro: #ffffff;
             --fundo-site: #f4f4f4;
+            --ifood-red: #ea1d2c;
         }
 
         * {
@@ -28,9 +28,8 @@
             line-height: 1.6;
         }
 
-        /* Cabecalho / Hero Section */
+        /* Hero Section */
         .hero {
-            /* Fundo com a imagem do Forno a Lenha e uma película roxa transparente para dar leitura no texto */
             background-image: linear-gradient(rgba(90, 24, 100, 0.85), rgba(90, 24, 100, 0.9)), url('https://i.ibb.co/RpHHHNts/CAPA-VIP.jpg');
             background-size: cover;
             background-position: center;
@@ -47,191 +46,130 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 300; }
 
         .botoes-acao {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
+            display: inline-block; padding: 15px 30px; border-radius: 8px;
+            text-decoration: none; font-weight: bold; font-size: 1.1rem;
             transition: all 0.3s ease;
         }
 
-        .btn-cardapio {
-            background-color: var(--dourado);
-            color: var(--texto-escuro);
-        }
+        .btn-cardapio { background-color: var(--dourado); color: var(--texto-escuro); }
+        .btn-cardapio:hover { background-color: #e09e30; transform: translateY(-2px); }
 
-        .btn-cardapio:hover {
-            background-color: #e09e30;
-            transform: translateY(-2px);
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366; 
-            color: var(--texto-claro);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebd5a;
-            transform: translateY(-2px);
-        }
-
-        /* Secao Historia */
-        .historia {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--texto-claro);
-        }
-
-        .historia h2 {
-            color: var(--roxo-vip);
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-
-        .historia p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        /* Secao Carrossel Pizzas */
-        .destaques {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .destaques h2 {
-            color: var(--roxo-vip);
-            margin-bottom: 30px;
-            font-size: 2rem;
-            padding: 0 20px;
-        }
-
-        .carrossel-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding: 10px 20px 30px 20px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--roxo-claro) #eee;
-        }
-
-        /* Customizando a barra de rolagem horizontal */
-        .carrossel-container::-webkit-scrollbar { height: 8px; }
-        .carrossel-container::-webkit-scrollbar-track { background: #e0e0e0; border-radius: 10px; margin: 0 20px; }
-        .carrossel-container::-webkit-scrollbar-thumb { background: var(--roxo-claro); border-radius: 10px; }
-
-        .carrossel-item {
-            flex: 0 0 85%;
-            max-width: 320px;
-            scroll-snap-align: center;
-            background: var(--texto-claro);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 1px solid #eee;
-        }
-
-        .carrossel-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .carrossel-item p {
-            padding: 15px;
-            font-weight: bold;
-            color: var(--texto-escuro);
-            font-size: 1.1rem;
-        }
-
-        /* Secao Adega (Vinhos) */
-        .adega {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--texto-claro);
-        }
-
-        .adega h2 {
-            color: var(--roxo-vip);
-            margin-bottom: 10px;
-            font-size: 2rem;
+        /* Historia e Video */
+        .institucional {
+            padding: 60px 20px; text-align: center; background-color: var(--texto-claro);
         }
         
-        .adega > p {
-            margin-bottom: 30px;
-            color: #666;
-            font-size: 1.1rem;
+        .institucional h2 { color: var(--roxo-vip); margin-bottom: 20px; font-size: 2rem; }
+        
+        .institucional p {
+            max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1rem; color: #555;
         }
 
-        .grid-vinhos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 900px;
+        .video-container {
+            max-width: 800px;
             margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 4px solid var(--roxo-vip);
         }
 
-        .vinho-item img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+        .video-container video {
+            width: 100%; display: block;
         }
 
-        .vinho-item img:hover {
-            transform: scale(1.03);
-        }
-
-        /* Rodape / Localizacao */
-        footer {
-            background-color: var(--texto-escuro);
-            color: var(--texto-claro);
+        /* Plataformas Delivery */
+        .plataformas {
+            padding: 50px 20px;
             text-align: center;
-            padding: 50px 20px 30px;
+            background-color: #eaeaea;
         }
 
-        footer h3 {
-            margin-bottom: 15px;
-            color: var(--dourado);
-            font-size: 1.5rem;
+        .plataformas h2 { color: var(--texto-escuro); margin-bottom: 30px; font-size: 1.8rem; }
+
+        .apps-container {
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 800px; margin: 0 auto;
         }
 
-        footer p {
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: #ddd;
+        .app-card {
+            background: var(--texto-claro); padding: 20px; border-radius: 12px;
+            width: 160px; font-weight: bold; color: var(--texto-escuro);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
 
-        .creditos {
-            margin-top: 30px;
-            font-size: 0.85rem;
-            color: #888;
-            border-top: 1px solid #555;
-            padding-top: 20px;
+        .app-ifood {
+            border: 2px solid var(--ifood-red);
+            transform: scale(1.05); /* Da uma enfase maior deixando ele um pouco maior */
         }
+
+        .selo-gourmet {
+            background-color: var(--ifood-red); color: white; font-size: 0.75rem;
+            padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* Iframe do WhatsMenu */
+        .embed-cardapio {
+            padding: 60px 20px; text-align: center; background-color: var(--fundo-site);
+        }
+
+        .embed-cardapio h2 { color: var(--roxo-vip); margin-bottom: 10px; font-size: 2rem; }
+        .embed-cardapio p { margin-bottom: 20px; color: #666; }
+
+        .iframe-container {
+            max-width: 1000px; margin: 0 auto; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid #ddd;
+        }
+
+        .iframe-container iframe {
+            width: 100%; height: 75vh; max-height: 800px; border: none; display: block;
+        }
+
+        /* Carrossel Pizzas */
+        .destaques { padding: 60px 0; text-align: center; background-color: var(--texto-claro); }
+        .destaques h2 { color: var(--roxo-vip); margin-bottom: 30px; font-size: 2rem; padding: 0 20px; }
+
+        .carrossel-container {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px;
+            padding: 10px 20px 30px 20px; scrollbar-width: thin; scrollbar-color: var(--roxo-claro) #eee;
+        }
+
+        .carrossel-item {
+            flex: 0 0 85%; max-width: 320px; scroll-snap-align: center; background: var(--fundo-site);
+            border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .carrossel-item img { width: 100%; height: 250px; object-fit: cover; }
+        .carrossel-item p { padding: 15px; font-weight: bold; font-size: 1.1rem; }
+
+        /* Rodape */
+        footer {
+            background-color: var(--texto-escuro); color: var(--texto-claro);
+            text-align: center; padding: 50px 20px 30px;
+        }
+        footer h3 { color: var(--dourado); font-size: 1.5rem; margin-bottom: 15px;}
+        footer p { margin-bottom: 10px; color: #ddd; }
+        
+        .creditos { margin-top: 30px; font-size: 0.85rem; color: #888; border-top: 1px solid #555; padding-top: 20px; }
+
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-flutuante {
+            position: fixed; bottom: 25px; right: 25px;
+            background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s;
+        }
+
+        .whatsapp-flutuante:hover { transform: scale(1.1); }
+        .whatsapp-flutuante svg { width: 35px; height: 35px; fill: currentColor; }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 2rem; }
@@ -245,23 +183,57 @@
     <header class="hero">
         <img src="https://i.ibb.co/rKRytQVy/LOGO-VIP.jpg" alt="Logo VIP Pizzaria" class="logo-topo">
         <h1>A Melhor Pizza da Região</h1>
-        <p>Feita no Forno a Lenha. Sabor e tradição desde 1991 na Freguesia do Ó.</p>
-        
+        <p>Feita no Forno a Lenha. Sabor e tradição desde 1991.</p>
         <div class="botoes-acao">
-            <!-- Insira o Link do WhatsMenu aqui -->
-            <a href="LINK_DO_SEU_WHATSMENU_AQUI" target="_blank" class="btn btn-cardapio">🛒 Acessar Cardápio Digital</a>
-            
-            <a href="https://wa.me/551139316085?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" class="btn btn-whatsapp">📱 Pedir pelo WhatsApp</a>
+            <a href="#cardapio-digital" class="btn btn-cardapio">🛒 Fazer Pedido Agora</a>
         </div>
     </header>
 
-    <!-- Secao Historia / Autoridade -->
-    <section class="historia">
-        <h2>Tradição VIP Pizzaria</h2>
-        <p>A receita clássica que você já conhece, agora mais rápida e digital do que nunca. Há mais de 35 anos, acendemos nosso forno a lenha todos os dias com um único propósito: entregar a pizza perfeita na sua mesa. A qualidade nunca mudou, só melhorou.</p>
+    <!-- Institucional e Vídeo -->
+    <section class="institucional">
+        <h2>A Nossa Tradição</h2>
+        <p>A receita clássica que você já conhece, agora mais rápida e digital do que nunca. Há mais de 35 anos, acendemos nosso forno a lenha com um único propósito: entregar a pizza perfeita na sua mesa.</p>
+        
+        <!-- Player de Video -->
+        <div class="video-container">
+            <!-- Substitua "SEU_VIDEO_AQUI.mp4" pelo link do arquivo do vídeo que você gravou -->
+            <video controls poster="https://i.ibb.co/RpHHHNts/CAPA-VIP.jpg">
+                <source src="SEU_VIDEO_AQUI.mp4" type="video/mp4">
+                Seu navegador não suporta a exibição de vídeos.
+            </video>
+        </div>
     </section>
 
-    <!-- Secao Carrossel Pizzas -->
+    <!-- Plataformas de Delivery -->
+    <section class="plataformas">
+        <h2>Também estamos nos Aplicativos</h2>
+        <div class="apps-container">
+            <!-- Card iFood em Destaque -->
+            <div class="app-card app-ifood">
+                <span class="selo-gourmet">⭐ Loja Gourmet</span>
+                <span style="color: var(--ifood-red); font-size: 1.3rem;">iFood</span>
+            </div>
+            
+            <div class="app-card">
+                <span style="color: #ff9900; font-size: 1.3rem;">99Food</span>
+            </div>
+
+            <div class="app-card">
+                <span style="color: #000000; font-size: 1.3rem;">Keeta</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Embed do WhatsMenu -->
+    <section id="cardapio-digital" class="embed-cardapio">
+        <h2>Cardápio VIP Pizzaria</h2>
+        <p>Peça diretamente pelo nosso sistema rápido e sem taxas ocultas.</p>
+        <div class="iframe-container">
+            <iframe src="https://whatsmenu.com.br/vippizzaria" title="Cardápio Digital VIP Pizzaria"></iframe>
+        </div>
+    </section>
+
+    <!-- Carrossel Pizzas (Visual Appeal) -->
     <section class="destaques">
         <h2>Sabores Inconfundíveis</h2>
         <div class="carrossel-container">
@@ -280,34 +252,24 @@
         </div>
     </section>
 
-    <!-- Secao Vinhos da Casa -->
-    <section class="adega">
-        <h2>Nossa Adega</h2>
-        <p>Experimente nossa linha exclusiva de Vinhos VIP. O acompanhamento perfeito.</p>
-        <div class="grid-vinhos">
-            <div class="vinho-item">
-                <img src="https://i.ibb.co/yn2nn4zN/image.png" alt="Vinho VIP 1">
-            </div>
-            <div class="vinho-item">
-                <img src="https://i.ibb.co/SXYzXyhh/image.png" alt="Vinho VIP 2">
-            </div>
-            <div class="vinho-item">
-                <img src="https://i.ibb.co/XfXJZjCD/image.png" alt="Vinho VIP 3">
-            </div>
-        </div>
-    </section>
-
     <!-- Rodape -->
     <footer>
         <h3>📍 Onde Estamos</h3>
         <p>Rua Antônio de Couros, 463 - Freguesia do Ó, São Paulo - SP</p>
-        <p><strong>Horário de Atendimento:</strong> Terça a Quinta e Domingo: 18h às 23h | Sexta e Sábado: 18h às 23h30</p>
+        <p><strong>Horário:</strong> Ter a Qui e Dom: 18h às 23h | Sex e Sáb: 18h às 23h30</p>
         
         <div class="creditos">
             &copy; 2026 VIP Pizzaria. Todos os direitos reservados.<br>
             Desenvolvido com tecnologia <strong>Rocket For Eat</strong>.
         </div>
     </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/551139316085?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" class="whatsapp-flutuante" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.12.551 4.195 1.597 6.015L.135 23.333l5.443-1.429c1.745.961 3.712 1.468 5.72 1.468h.005C17.949 23.372 23.334 18 23.334 11.353 23.334 4.708 17.949 0 12.031 0zm.005 19.467c-1.744 0-3.454-.469-4.945-1.354l-.355-.21-3.676.964.981-3.585-.23-.367C2.923 13.435 2.42 11.666 2.42 9.845c0-5.312 4.324-9.636 9.636-9.636 5.312 0 9.636 4.324 9.636 9.636 0 5.312-4.323 9.636-9.635 9.636zM17.3 14.153c-.287-.144-1.696-.837-1.958-.933-.263-.096-.454-.144-.645.144-.191.288-.742.934-.91 1.125-.167.191-.335.215-.622.072-2.13-.97-3.616-2.075-4.664-3.864-.167-.287.167-.263.454-.837.096-.191.048-.359-.048-.502-.096-.144-.646-1.556-.885-2.13-.234-.56-.473-.484-.645-.494h-.55c-.191 0-.502.072-.765.359-.263.287-1 1.006-1 2.455 0 1.448 1.028 2.85 1.171 3.04.143.191 2.052 3.256 5.068 4.567 1.958.85 2.502.825 2.956.764.53-.07 1.696-.693 1.935-1.362.239-.67.239-1.243.167-1.362-.072-.119-.263-.191-.55-.335z"/>
+        </svg>
+    </a>
 
 </body>
 </html>
