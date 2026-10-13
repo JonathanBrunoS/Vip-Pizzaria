@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,6 @@
             --fundo-dark: #120314;
             --texto-escuro: #1a1a1a;
             --texto-suave: #555555;
-            --ifood-red: #ea1d2c;
         }
 
         * {
@@ -53,13 +52,16 @@
             margin-bottom: 25px;
         }
 
+        /* Correção do Logótipo (Sem cortes) */
         .logo-topo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--dourado-vip);
+            width: 170px;
+            height: auto;
+            border-radius: 16px;
+            border: 3px solid var(--dourado-vip);
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 6px;
         }
 
         .hero h1 {
@@ -123,11 +125,10 @@
 
         .btn-wsp:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
             background: #20ba5a;
         }
 
-        /* --- PLATAFORMAS DE DELIVERY --- */
+        /* --- PLATAFORMAS DE DELIVERY (Corrigido) --- */
         .plataformas-sec {
             padding: 70px 20px;
             background: #ffffff;
@@ -152,43 +153,44 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
-            max-width: 1050px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .card-app {
-            background: #ffffff;
-            border: 2px solid #f0f0f0;
-            border-radius: 20px;
-            padding: 15px;
-            width: 240px;
-            height: 120px;
+            background: transparent;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
-            overflow: hidden;
+            text-decoration: none;
         }
 
         .card-app:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
         }
 
         .card-app img {
-            width: 100%;
             height: 100%;
+            width: auto;
+            border-radius: 14px;
             object-fit: contain;
-            border-radius: 12px;
+            display: block;
         }
 
         .card-ifood {
-            border: 2px solid var(--dourado-vip);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.2);
-            transform: scale(1.05);
+            border: 3px solid var(--dourado-vip);
+            transform: scale(1.1);
+        }
+        
+        .card-ifood:hover {
+            transform: scale(1.15) translateY(-3px);
         }
 
         /* --- MOCKUP CARDÁPIO DIGITAL (WHATSMENU) --- */
@@ -216,11 +218,7 @@
             gap: 12px;
         }
 
-        .browser-dots {
-            display: flex;
-            gap: 7px;
-        }
-
+        .browser-dots { display: flex; gap: 7px; }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
         .dot-red { background-color: #ff5f56; }
         .dot-yellow { background-color: #ffbd2e; }
@@ -250,7 +248,7 @@
             border: none;
         }
 
-        /* --- GOOGLE REVIEWS / DEPOIMENTOS --- */
+        /* --- GOOGLE REVIEWS (Corrigido para Mobile) --- */
         .reviews-sec {
             padding: 80px 20px;
             background: #ffffff;
@@ -259,15 +257,18 @@
 
         .google-badge-header {
             display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
             gap: 10px;
             background: #f1f3f4;
-            padding: 8px 20px;
+            padding: 10px 25px;
             border-radius: 30px;
             font-weight: 700;
             font-size: 0.95rem;
             color: #3c4043;
             margin-bottom: 20px;
+            line-height: 1.4;
         }
 
         .carrossel-reviews {
@@ -335,7 +336,6 @@
         .card-pizza img { width: 100%; height: 240px; object-fit: cover; }
         .card-pizza p { padding: 18px; font-weight: 700; color: var(--roxo-principal); font-size: 1.1rem; }
 
-        /* Seção Adega */
         .adega-box {
             background: linear-gradient(135deg, var(--roxo-principal) 0%, var(--fundo-dark) 100%);
             color: #ffffff;
@@ -361,10 +361,9 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             transition: transform 0.3s ease;
         }
-
         .card-vinho img:hover { transform: scale(1.04); }
 
-        /* --- VÍDEO VERTICAL (REELS 9:16) --- */
+        /* --- VÍDEO VERTICAL NATIVO (Sem Iframe do Drive) --- */
         .video-sec {
             padding: 80px 20px;
             background: #ffffff;
@@ -374,7 +373,7 @@
         .video-card-vertical {
             max-width: 360px;
             width: 100%;
-            height: 640px;
+            aspect-ratio: 9/16;
             margin: 0 auto;
             background: #000000;
             border-radius: 24px;
@@ -384,10 +383,11 @@
             position: relative;
         }
 
-        .video-card-vertical iframe {
+        .video-card-vertical video {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
+            display: block;
         }
 
         /* --- LOCALIZAÇÃO EXECUTIVA --- */
@@ -503,13 +503,19 @@
         .wsp-float:hover { transform: scale(1.12); }
         .wsp-float svg { width: 38px; height: 38px; fill: #ffffff; }
 
+        /* Responsividade para ecrãs mais pequenos */
         @media (max-width: 850px) {
             .grid-loc { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.1rem; }
-            .card-app { width: 100%; max-width: 280px; }
-            .card-ifood { transform: none; }
+            
+            /* Ajustes do Título de Avaliações em ecrãs pequenos */
+            .google-badge-header { font-size: 0.85rem; padding: 10px 15px; }
+            
+            .card-app { height: 75px; }
+            .card-ifood { transform: scale(1.05); }
+            .card-ifood:hover { transform: scale(1.08) translateY(-2px); }
+            
             .iframe-wrapper { height: 600px; }
-            .video-card-vertical { height: 560px; max-width: 320px; }
         }
     </style>
 </head>
@@ -520,7 +526,7 @@
         <div class="logo-wrapper">
             <img src="https://i.ibb.co/rKRytQVy/LOGO-VIP.jpg" alt="Logo VIP Pizzaria" class="logo-topo">
         </div>
-        <h1>A Melhor Pizza da Região na sua Mesa</h1>
+        <h1>A Melhor Pizza da Região na tua Mesa</h1>
         <p>Assada no tradicional Forno a Lenha. Mais de 35 anos de história e qualidade inconfundível na Freguesia do Ó.</p>
         
         <div class="botoes-hero">
@@ -558,8 +564,8 @@
 
     <!-- MOCKUP CARDÁPIO DIGITAL (WHATSMENU EMBED) -->
     <section id="fazer-pedido" class="cardapio-sec">
-        <h2 class="section-title">Faça seu Pedido Direto</h2>
-        <p class="section-subtitle">Acesse nosso cardápio oficial sem taxas intermediárias</p>
+        <h2 class="section-title">Faz o teu Pedido Direto</h2>
+        <p class="section-subtitle">Acede ao nosso cardápio oficial sem taxas intermediárias</p>
 
         <div class="browser-mockup">
             <div class="browser-header">
@@ -579,9 +585,11 @@
     <!-- GOOGLE REVIEWS (DEPOIMENTOS DE GERAÇÕES) -->
     <section class="reviews-sec">
         <div class="google-badge-header">
-            <span>⭐ <strong>4.9 / 5.0</strong> no Google Reviews • Tradição Reconhecida</span>
+            <span>⭐ <strong>4.9 / 5.0</strong> no Google Reviews</span>
+            <span style="color: #ccc;">•</span>
+            <span>Tradição Reconhecida</span>
         </div>
-        <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+        <h2 class="section-title">O que os Nossos Clientes Dizem</h2>
         <p class="section-subtitle">Histórias reais de quem acompanha a VIP Pizzaria há décadas</p>
 
         <div class="carrossel-reviews">
@@ -616,13 +624,13 @@
 
     <!-- GALERIA DE FOTOS E ADEGA DE VINHOS -->
     <section class="galeria-sec">
-        <h2 class="section-title">Nossa Cozinha em Detalhes</h2>
+        <h2 class="section-title">A Nossa Cozinha em Detalhes</h2>
         <p class="section-subtitle">Ingredientes selecionados e massa de longa fermentação</p>
 
         <div class="grid-pizzas">
             <div class="card-pizza">
                 <img src="https://i.ibb.co/SDbN7ZRq/image.png" alt="Pizza Especial VIP">
-                <p>Nossas Pizzas Especiais</p>
+                <p>As Nossas Pizzas Especiais</p>
             </div>
             <div class="card-pizza">
                 <img src="https://i.ibb.co/1YMjJRNv/image.png" alt="Sabor Inconfundível">
@@ -637,7 +645,7 @@
         <!-- Adega de Vinhos VIP -->
         <div class="adega-box">
             <h3>🍷 Adega Exclusiva VIP</h3>
-            <p>Harmonize sua pizza com a nossa seleção especial de Vinhos da Casa</p>
+            <p>Harmoniza a tua pizza com a nossa seleção especial de Vinhos da Casa</p>
             <div class="grid-vinhos">
                 <div class="card-vinho">
                     <img src="https://i.ibb.co/yn2nn4zN/image.png" alt="Vinho VIP 1">
@@ -652,14 +660,17 @@
         </div>
     </section>
 
-    <!-- BASTIDORES & VÍDEO VERTICAL DO GOOGLE DRIVE (REELS 9:16) -->
+    <!-- BASTIDORES & VÍDEO VERTICAL NATIVO -->
     <section class="video-sec">
         <h2 class="section-title">Bastidores do Nosso Forno</h2>
-        <p class="section-subtitle">Sinta o clima da nossa preparação diária</p>
+        <p class="section-subtitle">Sente o clima da nossa preparação diária</p>
 
         <div class="video-card-vertical">
-            <!-- Player para formato vertical Reels -->
-            <iframe src="https://drive.google.com/file/d/1hLKDp_kDAUd3-J2y6MT9-APh6ieSdIoG/preview" allow="autoplay"></iframe>
+            <!-- Player HTML5 nativo e limpo, substitui o iframe problemático do Google Drive -->
+            <video controls playsinline preload="metadata">
+                <source src="https://drive.google.com/uc?export=download&id=1hLKDp_kDAUd3-J2y6MT9-APh6ieSdIoG" type="video/mp4">
+                O teu navegador não suporta a tag de vídeo.
+            </video>
         </div>
     </section>
 
@@ -678,7 +689,7 @@
                     <p>Terça a Quinta e Domingo: 18h às 23h<br>Sexta e Sábado: 18h às 23h30</p>
                 </div>
                 <div class="info-item">
-                    <h4>📞 Contato</h4>
+                    <h4>📞 Contacto</h4>
                     <p>(11) 3931-6085</p>
                 </div>
                 <a href="https://maps.google.com/?q=Rua+Antônio+de+Couros,+463+-+Freguesia+do+Ó,+São+Paulo+-+SP" target="_blank" class="btn-mapa">
@@ -693,8 +704,9 @@
     <!-- FOOTER E REDES SOCIAIS -->
     <footer>
         <div class="social-links">
-            <a href="https://instagram.com/vippizzaria" target="_blank" class="social-btn">
-                📸 Siga no Instagram @vippizzaria
+            <!-- Link do Instagram atualizado -->
+            <a href="https://www.instagram.com/vippizzariaartesanal/" target="_blank" class="social-btn">
+                📸 Segue-nos no Instagram @vippizzariaartesanal
             </a>
         </div>
         <p>VIP Pizzaria &copy; 1991 - 2026. Todos os direitos reservados.</p>
